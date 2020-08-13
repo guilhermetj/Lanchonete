@@ -25,7 +25,7 @@
         </form>
         <div class="row">
           <div class="col text-center direitos">
-            <p>&copy;Direitos reservados <?php echo date('Y'); ?> | SENAC DF</p>
+            <p>&copy;Direitos reservados <?php echo date('Y'); ?> | Guilherme Pereira</p>
           </div>
         </div>
       </div>

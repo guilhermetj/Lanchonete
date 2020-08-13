@@ -71,20 +71,21 @@ $categorias = $categoriaDAO->listar();
       ?>
         <!-- conteudo do produto -->
         <div class="col-md-4 col-sm-6 col-xs-12">
-          <article class="produto produto-principal">
-            <figure>
+          <article class="produto ">
               <img src="<?= $capa; ?>" alt="">
-            </figure>
             <div class="descricao-produto">
               <h3><?= $produto->getNome(); ?></h3>
               <span class="badge badge-pill badge-info"><?= $categoria->getNome(); ?></span>
               <p><?= $produto->getDescricao(); ?></p>
+              <div class="container" id="preco">
               <span class="preco">
                 R$ <?= $produto->getPreco(); ?>
               </span>
-              <button type="" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalCompra<?= $produto->getId(); ?>">
+              <button type="" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#modalCompra<?= $produto->getId(); ?>" style="margin-left: 30%">
                 COMPRAR
               </button>
+              </div>
+              
             </div>
           </article>
         </div>
@@ -102,9 +103,8 @@ $categorias = $categoriaDAO->listar();
                   </div>
                   <div class="modal-body">
                     <article class="produto">
-                      <figure>
                        <!-- carrosel -->
-                        <div id="indicadoresModal<?= $produto->getId(); ?>" class="carousel slide" data-ride="carousel">
+                        <div id="indicadoresModal<?= $produto->getId(); ?>" class="carousel slide" data-ride="carousel" style="padding-top: 20px;">
                           <ol class="carousel-indicators">
                             <?php 
                             $n = 0;
@@ -119,7 +119,7 @@ $categorias = $categoriaDAO->listar();
                             $n = 0;
                             foreach ($imagens as $imagem): ?>
                               <div class="carousel-item <?php echo($n == 0 ? 'active' : '') ?>">
-                                <img class="d-block w-100" src="./admin/<?= $imagem->getCaminho(); ?>" alt="Primeiro Slide">
+                                <img class="d-block " src="./admin/<?= $imagem->getCaminho(); ?>" alt="Primeiro Slide">
                               </div>
                             <?php 
                             $n++;
@@ -149,29 +149,28 @@ $categorias = $categoriaDAO->listar();
                         </div>
                         <!-- /carrosel -->
                       <!--   <img src="/assets/img/produtos/produto1.png" alt=""> -->
-                      </figure>
                       <div class="descricao-produto">
                         <h3><?= $produto->getNome(); ?></h3>
                         <p><?= $produto->getDescricao(); ?></p>
                         <span class="preco" id="preco<?= $produto->getId(); ?>">
                           R$ <?= $produto->getPreco(); ?>
                         </span>
-                          <form class="form-inline my-2 my-lg-0" method="post" action="adiciona_produto.php">
-                            <input type="hidden" name="produto" id="produto<?= $produto->getId(); ?>" value="<?= $produto->getId(); ?>">
-                            <input type="hidden" name="nome_produto" id="nome_produto<?= $produto->getId(); ?>" value="<?= $produto->getNome(); ?>">
-                            <input type="hidden" name="preco_produto" id="preco_produto<?= $produto->getId(); ?>" value="<?= $produto->getPreco(); ?>">
-                            <input type="hidden" name="val" value="<?= $produto->getPrecoBD(); ?>" id="valor_unidade<?= $produto->getId(); ?>">
-                            <input class="form-control-range mr-sm-2" id="range_valor<?= $produto->getId(); ?>" type="range" placeholder="Quantidade" aria-label="Quantidade" min="1" max="10" value="1" required onchange="alteraValor('range',$(this).val(),<?= $produto->getId(); ?>)">
-                            <br>
-                            <input type="number" id="qtd<?= $produto->getId(); ?>" name="qtd" value="1" class="form-control mr-sm-0" min="1" onchange="alteraValor('qtd',$(this).val(),<?= $produto->getId(); ?>)">
-                            <button class="btn btn-primary my-2 my-sm-0" onclick="AddItem(<?= $produto->getId(); ?>); return false;">
-                              Adicionar
-                            </button>
-                          </form>
+                          
                       </div>
                     </article>
                   </div>
                   <div class="modal-footer">
+                  <form class="form-inline my-2 my-lg-0" method="post" action="adiciona_produto.php">
+                            <input type="hidden" name="produto" id="produto<?= $produto->getId(); ?>" value="<?= $produto->getId(); ?>">
+                            <input type="hidden" name="nome_produto" id="nome_produto<?= $produto->getId(); ?>" value="<?= $produto->getNome(); ?>">
+                            <input type="hidden" name="preco_produto" id="preco_produto<?= $produto->getId(); ?>" value="<?= $produto->getPreco(); ?>">
+                            <input type="hidden" name="val" value="<?= $produto->getPrecoBD(); ?>" id="valor_unidade<?= $produto->getId(); ?>">
+                            <label>Quantidade:</label>
+                            <input type="number" id="qtd<?= $produto->getId(); ?>" name="qtd" value="1" class="form-control" min="1" onchange="alteraValor('qtd',$(this).val(),<?= $produto->getId(); ?>)" style="margin-right: 60px;margin-left: 30px; width: 86.5px;">
+                            <button class="btn btn-primary my-2 my-sm-0" onclick="AddItem(<?= $produto->getId(); ?>); return false;">
+                              Adicionar
+                            </button>
+                          </form>
                     <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
                   </div>
                 </div>

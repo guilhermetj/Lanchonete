@@ -54,10 +54,10 @@ p {
 }
 #menu-principal {
 	font-family: 'Andika';
-	font-size: 18px;
+	font-size: 17px;
     font-weight: bold;
-    border-top: solid 6px #868787;
-    border-bottom: solid 6px #868787;
+    border-top: solid 1px #868787;
+    border-bottom: solid 4px #868787;
     background-color: #a9a5a4 !important;
 }
 #menu-principal ul  li a {
@@ -69,17 +69,7 @@ p {
 .menu-login {
 	margin-left: 50px;
 }
-#logo-menu {
-	background-color: #FFF;
-	height: 230px;
-	width: 264px;
-	position: absolute;
-	margin-right: 10px;
-	margin-top: 20px;
-	border: solid 6px #868787;
-	line-height: 232px;
-	z-index: 10;
-}
+
 .bag-pedido {
 	font-size: 24px;
 	padding: 0; 
@@ -101,7 +91,7 @@ p {
 	min-height: 300px;
 }
 .produto {
-	height: 455px;
+	height: 500px;
 	border-radius: 7px;
 	border: 1px solid #d1d1d1;
 	background: #fff;
@@ -114,14 +104,20 @@ p {
 	font-weight: bold;
 	font-size: 18px;
 }
-.produto .descricao-produto .preco {
+.preco {
+	
 	font-weight: bold;
 	color:  #6c3428;
 	font-size: 22px;
 }
+#preco{
+	margin-top: 20%;
+}
 .produto img {
-	border-radius: 7px;
-	width: 100%;
+	margin-top: 5%;
+	margin-left: 5%;
+	border-radius: 8px;
+	width: 90%;
 	height: 240px;
 	object-fit: cover;
 }
