@@ -9,7 +9,7 @@ Um sistema de gerenciamento e compra de uma lanchonete, desenvolvido em php.
     <td colspan="2">Administração</td>
   </tr>
   <tr>
-    <td><img src="./readme/cardapio.png" width=300 /></td><td><img src="./readme/dashboard-admin.png" width=300 /></td>
-    <td><img src="./readme/finalizar-pedido.png" width=180 /></td><td><img src="./readme/lista-vendas.png" width=180 /></td>
+    <td><img src="./readme/cardapio.png" width=400 /></td><td><img src="./readme/dashboard-admin.png" width=300 /></td>
+    <td><img src="./readme/finalizar-pedido.png" width=400 /></td><td><img src="./readme/lista-vendas.png" width=180 /></td>
   </tr>
 </table>
