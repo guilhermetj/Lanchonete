@@ -1,7 +1,5 @@
-Um sistema de gerenciamento e compra de uma lanchonete, desenvolvido em php.
-
-
-## 🎨 Design
+<p>Um sistema de gerenciamento e compra de uma lanchonete, desenvolvido em php.</p>
+<p>Tecnologias utilizadas: Php OO, MySql, PDO, Javascript, Html, CSS.</p>
 
 <table>
   <tr>
